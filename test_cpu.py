@@ -61,6 +61,7 @@ def hash_iterations(passwordlist, hashClass, iters):
 
 def main(argv):
     # Input values to be hashed
+    passwordlist = []
     print("\nGenearating strings")
     for i in range(100):
         print("\nGenearated", i, "strings")
