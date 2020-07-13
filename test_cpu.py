@@ -15,7 +15,7 @@ import time
 
 # ===================================== Test funcs =============================================
 
-def hash_iterations_sha512_test(opencl_algo, passwordlist, iters):
+def hash_iterations_sha512_test(passwordlist, iters):
     print()
     print("Testing sha512 " + str(iters) + " rounds")
 
@@ -65,7 +65,7 @@ def main(argv):
 
     # Call the tests
     print("cpu test sha512")
-    hash_iterations_sha512_test(opencl_algos, passwordlist, 10000)
+    hash_iterations_sha512_test(passwordlist, 10000)
 
     '''
     for salt in salts:
