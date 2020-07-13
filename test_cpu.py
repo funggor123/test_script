@@ -23,7 +23,7 @@ def hash_iterations_sha512_test(passwordlist, iters):
         passwordlist[i] = hashlib.sha512(passwordlist[i]).digest()
 
     start = time.time()
-    clresult = hash_iterations(passwordlist, hashlib.sha512, iters, clresult)
+    clresult = hash_iterations(passwordlist, hashlib.sha512, iters)
     done = time.time()
     elapsed = done - start
     print("time used", elapsed)
@@ -51,7 +51,7 @@ def test_iterations(passwordlist, hashClass, iters, clResult):
                 print(clResult[i])
                 print(hashlib_passwords[i])
 
-def hash_iterations(passwordlist, hashClass, iters, clResult):
+def hash_iterations(passwordlist, hashClass, iters):
     hashlib_passwords = []
     for password in passwordlist:
         for i in range(iters):
