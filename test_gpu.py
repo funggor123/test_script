@@ -242,7 +242,7 @@ def hash_iterations_sha512_test(opencl_algo, passwordlist, iters):
 def get_random_string(length):
     letters = string.ascii_lowercase
     result_str = ''.join(random.choice(letters) for i in range(length))
-    print("Random string of length", length, "is:", result_str)
+    #print("Random string of length", length, "is:", result_str)
     return result_str
 
 def main(argv):
@@ -257,7 +257,8 @@ def main(argv):
     passwordlist = []
 
     # Input values to be hashed
-    for i in range(1024):
+    print("\nGenearating Strings")
+    for i in range(10):
         passwordlist.append(str.encode(get_random_string(1024)))
     #salts = [b"salty123",b"salty12"]
 
