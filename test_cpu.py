@@ -12,6 +12,8 @@ from binascii import unhexlify, hexlify
 from collections import deque
 from hashlib import pbkdf2_hmac
 import time
+import random
+import string
 
 # ===================================== Test funcs =============================================
 
@@ -58,6 +60,12 @@ def hash_iterations(passwordlist, hashClass, iters):
             password = hashClass(password).digest()
         hashlib_passwords.append(password)
     return hashlib_passwords
+
+def get_random_string(length):
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    #print("Random string of length", length, "is:", result_str)
+    return result_str
 
 def main(argv):
     # Input values to be hashed
