@@ -256,7 +256,7 @@ def main(argv):
 
     # Input values to be hashed
     for i in range(1024):
-        passwordlist.append(str.encode(get_random_string((1024)))
+        passwordlist.append(str.encode(get_random_string(1024)))
     #salts = [b"salty123",b"salty12"]
 
     platform = int(argv[1])
