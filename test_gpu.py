@@ -227,7 +227,11 @@ def hash_iterations_sha512_test(opencl_algo, passwordlist, iters):
     for i in range(len(passwordlist)):
         passwordlist[i] = hashlib.sha512(passwordlist[i]).digest()
 
+    start = time.time()
     clresult = opencl_algo.cl_hash_iterations(ctx, passwordlist, iters, 8)
+    done = time.time()
+    elapsed = done - start
+    print("time used", elapsed)
 
     test_iterations(passwordlist, hashlib.sha512, iters, clresult)
 
@@ -244,7 +248,7 @@ def main(argv):
 
     # Input values to be hashed
     passwordlist = [b'password', b'hmm', b'trolololl', b'madness']
-    salts = [b"salty123",b"salty12"]
+    #salts = [b"salty123",b"salty12"]
 
     platform = int(argv[1])
     debug = 0
@@ -252,6 +256,10 @@ def main(argv):
     opencl_algos = opencl.opencl_algos(platform, debug, write_combined_file,inv_memory_density=1)
     # Call the tests
 
+    print("opencl gpu test sha512")
+    hash_iterations_sha512_test(opencl_algos, passwordlist, 10000)
+
+    '''
     for salt in salts:
         print("Using salt: %s" % salt)
         #hash_iterations_md5_test(opencl_algos, passwordlist, 10000)
@@ -262,6 +270,7 @@ def main(argv):
         done = time.time()
         elapsed = done - start
         print("time used", elapsed)
+    '''
 
 
     print("Tests have finished.")
