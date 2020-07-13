@@ -11,6 +11,8 @@ from binascii import unhexlify, hexlify
 from collections import deque
 from hashlib import pbkdf2_hmac
 import time
+import random
+import string
 
 # ===================================== Test funcs =============================================
 
