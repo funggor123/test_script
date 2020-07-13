@@ -61,7 +61,11 @@ def hash_iterations(passwordlist, hashClass, iters):
 
 def main(argv):
     # Input values to be hashed
-    passwordlist = [b'password', b'hmm', b'trolololl', b'madness']
+    print("\nGenearating strings")
+    for i in range(100):
+        print("\nGenearated", i, "strings")
+        passwordlist.append(str.encode(get_random_string(1048576)))
+    #salts = [b"salty123",b"salty12"]
 
     # Call the tests
     print("cpu test sha512")
