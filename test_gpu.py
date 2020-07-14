@@ -258,7 +258,7 @@ def main(argv):
 
     # Input values to be hashed
     print("\nGenearating strings")
-    for i in range(50):
+    for i in range(1):
         print("\nGenearated", i, "strings")
         passwordlist.append(str.encode(get_random_string(1048576)))
     #salts = [b"salty123",b"salty12"]
