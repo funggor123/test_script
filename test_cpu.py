@@ -78,7 +78,7 @@ def main(argv):
 
     # Call the tests
     print("cpu test sha512")
-    hash_iterations_sha512_test(passwordlist, 10000)
+    hash_iterations_sha512_test(passwordlist, 1000000)
 
     '''
     for salt in salts:

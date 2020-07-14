@@ -270,7 +270,7 @@ def main(argv):
     # Call the tests
 
     print("opencl gpu test sha512")
-    hash_iterations_sha512_test(opencl_algos, passwordlist, 10000)
+    hash_iterations_sha512_test(opencl_algos, passwordlist, 1000000)
 
     '''
     for salt in salts:
